@@ -151,7 +151,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 
      // User Joins a voice channel
 	 //client.message.send(author, "Joined Channel");
-	 if (newUserChannel !=== '#AFK'){
+	 if (newUserChannel !== '#AFK'){
 		client.channels.find("name", "raidlog").send(newMember + " Joined Channel " + newUserChannel);
 	 }
 
@@ -170,7 +170,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 	  if (oldUserChannel !== '#AFK'){
 		client.channels.find("name", "raidlog").send(oldMember + " Left Channel " + oldUserChannel);
 	  }
-	  if (newUserChannel !=== '#AFK'){
+	  if (newUserChannel !== '#AFK'){
 		client.channels.find("name", "raidlog").send(newMember + " Joined Channel " + newUserChannel);
 	  }
   }
