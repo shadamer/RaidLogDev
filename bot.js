@@ -166,9 +166,13 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 		// user muted or unmuted themselves. Ignore the event.
   }  
   else{
-	  client.channels.find("name", "raidlog").send(oldMember + " Left Channel " + oldUserChannel);
-	  client.channels.find("name", "raidlog").send(newMember + " Joined Channel " + newUserChannel);
-	  
+	  // we don't care about AFK
+	  if (oldUserChannel !== 'AFK'){
+		client.channels.find("name", "raidlog").send(oldMember + " Left Channel " + oldUserChannel);
+	  }
+	  if (newUserChannel !=== 'AFK'){
+		client.channels.find("name", "raidlog").send(newMember + " Joined Channel " + newUserChannel);
+	  }
   }
   
 }); // end client.on(voicestateupdate)
